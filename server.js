@@ -10,7 +10,7 @@ const users = []
 
 app.post('/usuarios', async (req, res) => {
 
-     prisma.user.create({
+    await prisma.user.create({
 
         data: {
             email: req.body.email,
