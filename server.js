@@ -12,44 +12,44 @@ app.post('/usuarios', async (req, res) => {
 
         data: {
             email: req.body.email,
-            name:  req.body.name,
+            name: req.body.name,
             age: req.body.age
-        
+
         }
     })
 
-res.status(201).json(req.body)
+    res.status(201).json(req.body)
 
 })
 
 
-app.get('/usuarios', async (req, res) =>{
+app.get('/usuarios', async (req, res) => {
 
-const users = await prisma.user.findMany()
+    const users = await prisma.user.findMany()
 
     res.status(200).json(users)
-}) 
+})
 
 
 app.put('/usuarios/:id', async (req, res) => {
 
-console.log(req)
+    console.log(req)
 
     await prisma.user.update({
-    
-            where: {
-                id: req.params.id
-            },
+
+        where: {
+            id: req.params.id
+        },
         data: {
-           email: req.body.email,
-           name:  req.body.name,
+            email: req.body.email,
+            name: req.body.name,
             age: req.body.age
-        
+
         }
- 
+
     })
 
-res.status(201).json(req.body)
+    res.status(201).json(req.body)
 
 
     app.delete('/usuarios/:id', async (req, res) => {
@@ -62,7 +62,7 @@ res.status(201).json(req.body)
         })
     })
 
-res.status(201).json(req.body)
+    res.status(200).json({ message:  'Usuário deletado com Sucesso!! ' })
 
 })
 
