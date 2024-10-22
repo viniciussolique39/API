@@ -50,6 +50,9 @@ console.log(req)
 
 res.status(201).json(req.body)
 
+
+})
+
 app.delete('/usuarios/:id', async (req, res) => {
 
     await prisma.user.delete({
@@ -62,6 +65,5 @@ app.delete('/usuarios/:id', async (req, res) => {
     res.status(200).json({ message: ' Usuário deletado com Sucesso!!'})
 })
 
-})
 
 app.listen(3000)
