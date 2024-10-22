@@ -48,6 +48,11 @@ console.log(req)
         }
     })
 
+    app.delete('/usuarios/:id', async (req, res) => {
+
+        
+    })
+
 res.status(201).json(req.body)
 
 })
